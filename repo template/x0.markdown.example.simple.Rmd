@@ -1,0 +1,48 @@
+---
+title: "markdown example.simple"
+output: html_document
+---
+Markdown has *all* kinds of **options** for text lay^out^ including different levels of headers.
+
+# Big
+
+## Big-ish
+
+### Medium
+
+The great thing is that you can mix the text and and the code. If you don't want the code to be shown, you just type 'echo = FALSE. In general this is a good method for small-ish code projects. I find that it gets quite messy quickly, with your R code more fragmented.
+If you just read one summary file you can do it this way, or you want to do a couple of analyses only, and each go into a new markdown file.
+
+Let's start an analyses.
+
+```{r}
+# simulate data for x and y
+x.t <- rnorm(10, 5, 2)
+y.t <- rnorm(10, 6, 1)
+
+```
+
+If we do 'echo = FALSE' we only get what you output, here a graph.
+
+```{r, echo=FALSE}
+# produce a plot of x and y
+plot(x.t, y.t, xlab = "x variable", ylab = "y variable", pch = 19, col = "blue", las = 1)
+
+```
+
+### random stats
+
+Let's do some stats.
+
+```{r, echo=FALSE}
+summary(lm(y.t ~ x.t))
+
+```
+
+It is easy to add things inline, for example the p = `r  summary(lm(y.t ~ x.t))$coefficient[2, 4]` value for the test if the slope is different from 0. This is quite handy as it will be updated when we add more data or redo the analyses (rerun and the p value should change with new data).
+Wicked. Of course we can use standard R functions like *round()* to make it better p = `r  round(summary(lm(y.t ~ x.t))$coefficient[2, 4],3)`
+
+There are some other tricks to e.g. format a formula etc but it is less sophisticated than LateX for example. For me it is mainly useful for a working document, not really a manuscript.
+
+
+

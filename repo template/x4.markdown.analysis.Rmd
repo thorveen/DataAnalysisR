@@ -1,0 +1,34 @@
+---
+title: "markdown.analysis"
+author: "Thor Veen"
+date: "13/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+read_chunk("4.markdown.analysis.R")
+```
+
+For this analysis we segmented code in the R script 4.markdown.analysis.R into code chunks and named them. In the Markdown file you can now call these chunks by their names.
+
+## data inspection
+Check the Iris data set
+```{r one, echo = FALSE}
+```
+
+## analysis
+Let's see of the sepal width differs among the species.
+Show the coefficient table
+```{r three, echo = TRUE}
+```
+
+## visualisation
+Plot the sepal width vs height. Show all the code (echo = TRUE, the default)
+```{r two, echo = TRUE}
+```
+
+
+
+
