@@ -18,17 +18,18 @@ Check the Iris data set
 ```{r one, echo = FALSE}
 ```
 
+
 ## analysis
 Let's see of the sepal width differs among the species.
 Show the coefficient table
 ```{r three, echo = TRUE}
 ```
 
+
 ## visualisation
 Plot the sepal width vs height. Show all the code (echo = TRUE, the default)
 ```{r two, echo = TRUE}
 ```
-
 
 
 
